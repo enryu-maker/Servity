@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
   ImageBackground,
+  ScrollView,
 } from "react-native";
 import Donarcard from "./Donarcard";
 export default class Mainscreen extends Component {
@@ -44,19 +45,19 @@ export default class Mainscreen extends Component {
         <View style={{backgroundColor:'#FAF0E6', height:'100%'}}>
             
           <View>
-            <ImageBackground
-              style={styles.header}
-              source={require("../assets/header.png")}
-            >
+            <View style={styles.header}>
                 <TouchableOpacity>
                 <Image source={require('../assets/Vector.png')}
                 style={styles.menu}/>
                 </TouchableOpacity>
-            </ImageBackground>
+                <Text style={styles.header_text}>SERVITY</Text>
+            </View>
           </View>
+          <ScrollView>
           <View style={{ flexDirection: "column",justifyContent:'space-between',marginTop:30 }}>
            {cardvalue}
           </View>
+          </ScrollView>
         </View>
 
 
@@ -68,8 +69,12 @@ const styles = StyleSheet.create({
   header: {
     width: "100%",
     height: 80,
-    //position:'relative',
-    //flex:2
+    backgroundColor:'#3e5f9c',
+    flexDirection:'row',
+    justifyContent:'flex-start',
+    alignSelf:'center',
+    marginTop:20
+
   },
   menu:{
       height:40,
@@ -78,6 +83,15 @@ const styles = StyleSheet.create({
       marginTop:20,
       //alignContent:'center',
       justifyContent:'center'
+  },
+  header_text:{
+      fontSize:35,
+      color:'#fff',
+      alignSelf:'center',
+      letterSpacing: 4,
+      alignContent:'center',
+      marginLeft:55
+      
   }
   
 });
