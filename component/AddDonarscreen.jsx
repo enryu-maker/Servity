@@ -11,8 +11,8 @@ import {
 import { Dimensions } from "react-native";
 export default class Adddonar extends Component {
   render() {
-    const screen = Dimensions.get("screen");
-    var wid = screen.width / 2;
+    //const screen = Dimensions.get("screen");
+    //var wid = screen.width / 2;
     return (
       <View style={{ backgroundColor: "#FAF0E6", height: "100%" }}>
         <View style={{ flex: 1 }}>
