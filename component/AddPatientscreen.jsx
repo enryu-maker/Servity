@@ -10,19 +10,25 @@ import {
 } from "react-native";
 import { Dimensions } from "react-native";
 export default class Addpatient extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      Name: "",
+      Age: "",
+      Blood_group: "",
+      Hospital_Name: "",
+      House_Address: "",
+      Contact_Number: "",
+      Any_message: "",
+    };
+  }
   render() {
-    const screen = Dimensions.get("screen");
-    var wid = screen.width / 2;
+    //const screen = Dimensions.get("screen");
+    //var wid = screen.width / 2;
     return (
-      <View style={{ backgroundColor: "#FAF0E6", height: "100%" }}>
+      <View style={{ backgroundColor: "#F4EEE8", height: "100%" }}>
         <View style={{ flex: 1 }}>
           <View style={styles.header}>
-            <TouchableOpacity>
-              <Image
-                source={require("../assets/Vector.png")}
-                style={styles.menu}
-              />
-            </TouchableOpacity>
             <Text style={styles.header_text}>Register Patient</Text>
           </View>
 
@@ -33,6 +39,7 @@ export default class Addpatient extends Component {
               //onChangeText={onChangeNumber}
               placeholder="Name"
               returnKeyType={"next"}
+              onChangeText={(text) => this.setState({ Name: text })}
             />
             <Text style={styles.heading_text}>Age</Text>
             <TextInput
@@ -40,6 +47,7 @@ export default class Addpatient extends Component {
               //onChangeText={onChangeNumber}
               placeholder="Age"
               returnKeyType="next"
+              onChangeText={(text) => this.setState({ Age: text })}
             />
             <Text style={styles.heading_text}>Blood Group</Text>
             <TextInput
@@ -47,6 +55,7 @@ export default class Addpatient extends Component {
               //onChangeText={onChangeNumber}
               placeholder="Blood Group"
               returnKeyType="next"
+              onChangeText={(text) => this.setState({ Blood_group: text })}
             />
             <Text style={styles.heading_text}>Hospital Name</Text>
             <TextInput
@@ -54,6 +63,7 @@ export default class Addpatient extends Component {
               //onChangeText={onChangeNumber}
               placeholder="Hospital Name"
               returnKeyType="next"
+              onChangeText={(text) => this.setState({ Hospital_Name: text })}
             />
             <Text style={styles.heading_text}>House Address</Text>
             <TextInput
@@ -61,6 +71,7 @@ export default class Addpatient extends Component {
               //onChangeText={onChangeNumber}
               placeholder="House Address"
               returnKeyType="next"
+              onChangeText={(text) => this.setState({ House_Address: text })}
             />
             <Text style={styles.heading_text}>Contact Number</Text>
             <TextInput
@@ -68,6 +79,7 @@ export default class Addpatient extends Component {
               //onChangeText={onChangeNumber}
               placeholder="Contact Number"
               returnKeyType="next"
+              onChangeText={(text) => this.setState({ Contact_Number: text })}
             />
             <Text style={styles.heading_text}>Any message</Text>
             <TextInput
@@ -75,6 +87,7 @@ export default class Addpatient extends Component {
               //onChangeText={onChangeNumber}
               placeholder="Any message"
               returnKeyType="next"
+              onChangeText={(text) => this.setState({ Any_message: text })}
             />
 
             <TouchableOpacity>
@@ -93,9 +106,9 @@ const styles = StyleSheet.create({
   header: {
     width: "100%",
     height: 80,
-    backgroundColor: "#3e5f9c",
+    backgroundColor: "#325288",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignSelf: "center",
     //marginTop:20,
     position: "relative",
